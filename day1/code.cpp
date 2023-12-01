@@ -1,10 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void task1() {
-    string s;
+void task1(vector<string> str) {
     int sum = 0;
-    while (getline(cin, s)) {
+    for (string s : str) {
         int x = 0, y = 0;
         for (auto ch : s)
             if (isdigit(ch)) {
@@ -19,10 +18,10 @@ void task1() {
             }
         sum += x * 10 + y;
     }
-    cout << sum << endl;
+    cout << "task1: " << sum << endl;
 }
 
-void task2() {
+void task2(vector<string> str) {
     map<string, int> m;
     m["1"] = m["one"] = 1;
     m["2"] = m["two"] = 2;
@@ -33,9 +32,8 @@ void task2() {
     m["7"] = m["seven"] = 7;
     m["8"] = m["eight"] = 8;
     m["9"] = m["nine"] = 9;
-    string s;
     int sum = 0;
-    while (getline(cin, s)) {
+    for (string s : str) {
         int x = 0, y = 0;
         for (int i = 0; i < s.length(); ++i) {
             bool f = false;
@@ -62,12 +60,16 @@ void task2() {
         }
         sum += x * 10 + y;
     }
-    cout << sum << endl;
+    cout << "task2: " << sum << endl;
 }
 
 int main () {
     freopen("input.txt", "r", stdin);
-    // task1();
-    task2();
+    vector<string> str;
+    string s;
+    while (getline(cin, s))
+        str.push_back(s);
+    task1(str);
+    task2(str);
     return 0;
 }
