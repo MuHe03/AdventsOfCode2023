@@ -34,7 +34,7 @@ void task1(vector<vector<tuple<int, int, int>>> games) {
         for (int j = 0; j < games[i].size(); ++j) {
             auto [r1, g1, b1] = target;
             auto [r2, g2, b2] = games[i][j];
-            f &= r1 <= r2 && g1 <= g2 && b1 <= b2;
+            f &= r1 >= r2 && g1 >= g2 && b1 >= b2;
         }
         if (f)
             ans += i + 1;
