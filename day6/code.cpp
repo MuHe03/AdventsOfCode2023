@@ -12,6 +12,8 @@ void task1(vector<int> t, vector<int> d) {
     cout << "task1: " << ans << endl;
 }
 
+// this is a brute force solution
+// instead, we can do a binary search since the function has only 1 maximum
 void task2(vector<int> tt, vector<int> dd) {
     string ts, ds;
     for (auto x : tt)
